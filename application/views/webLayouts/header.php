@@ -55,11 +55,12 @@
 
                     <li><a><i class="ti-timer"></i>Đóng Cửa: <?php echo explode(":",$setting[0]['GioDongCua'])[0].":".explode(":",$setting[0]['GioDongCua'])[1]; ?></a>
                     </li>
-
-                    <li class="label">QR Thanh Toán</li>
-                    <li>
-                        <img src="https://api.vietqr.io/image/mbbank-<?php echo $setting[0]['SoTaiKhoan'] ?>-fTpTJka.jpg?accountName=<?php echo $setting[0]['ChuTaiKhoan'] ?>&amount=<?php echo $_SESSION['sumMenu']; ?>&addInfo=<?php echo $_SESSION['noidung']; ?>" style="width: 100%; height: 100%; padding: 10px; padding-top: 0px;">
-                    </li>
+                    <?php if(isset($_SESSION['menu']) && (count($_SESSION['menu']) >= 1)){ ?>
+                        <li class="label">QR Thanh Toán</li>
+                        <li>
+                            <img src="https://api.vietqr.io/image/mbbank-<?php echo $setting[0]['SoTaiKhoan'] ?>-fTpTJka.jpg?accountName=<?php echo $setting[0]['ChuTaiKhoan'] ?>&amount=<?php echo $_SESSION['sumMenu']; ?>&addInfo=<?php echo $_SESSION['noidung']; ?>" style="width: 100%; height: 100%; padding: 10px; padding-top: 0px;">
+                        </li>
+                    <?php } ?>
                 </ul>
             </div>
         </div>
