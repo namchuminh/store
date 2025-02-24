@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 13, 2024 at 05:12 PM
+-- Generation Time: Nov 15, 2024 at 02:13 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -60,6 +60,14 @@ CREATE TABLE `chitiethoadon` (
   `SoLuong` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Dumping data for table `chitiethoadon`
+--
+
+INSERT INTO `chitiethoadon` (`MaChiTietHoaDon`, `MaHoaDon`, `MaSanPham`, `SoLuong`) VALUES
+(254, 215, 7, 1),
+(255, 215, 4, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -97,6 +105,13 @@ CREATE TABLE `hoadon` (
   `ThoiGian` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Dumping data for table `hoadon`
+--
+
+INSERT INTO `hoadon` (`MaHoaDon`, `TongTien`, `ThanhToan`, `ThoiGian`) VALUES
+(215, 20000, 1, '2024-04-14 19:43:46');
+
 -- --------------------------------------------------------
 
 --
@@ -129,7 +144,10 @@ INSERT INTO `lichsunhap` (`MaLichSuNhap`, `MaNhanVien`, `MaNhaCungCap`, `MaSanPh
 (10, 1, 12, 6, 30, 5, 200000, '2024-04-11 12:02:08'),
 (11, 1, 12, 6, 35, 20, 300000, '2024-04-11 12:02:35'),
 (12, 1, 13, 7, 0, 15, 150000, '2024-04-11 12:04:36'),
-(13, 1, 12, 7, 0, 100, 2000000, '2024-04-13 18:02:23');
+(13, 1, 12, 7, 0, 100, 2000000, '2024-04-13 18:02:23'),
+(14, 1, 12, 8, 0, 10, 150000, '2024-07-27 21:43:48'),
+(15, 1, 13, 9, 0, 20, 200000, '2024-09-09 20:49:50'),
+(16, 1, 13, 9, 20, 240, 2000000, '2024-11-15 19:52:58');
 
 -- --------------------------------------------------------
 
@@ -226,11 +244,13 @@ CREATE TABLE `sanpham` (
 --
 
 INSERT INTO `sanpham` (`MaSanPham`, `TenSanPham`, `MoTa`, `GiaBan`, `SoLuong`, `MaChuyenMuc`, `HinhAnh`, `MaQR`, `TrangThai`) VALUES
-(3, 'Trà Sữa Trân Trâu', '<p>abcde</p>', 15000, 35, 2, 'http://localhost/QLCuaHang/uploads/15819205452.jpg', '', 1),
-(4, 'Hướng Dương', '<p>abcde</p>', 15000, 13, 2, 'http://localhost/QLCuaHang/uploads/z4617362741623_98c0302df70bfe02dd581fa8a0e35aa6.jpg', '', 1),
-(5, 'Sting Vàng', '<p>nước uống</p>', 10000, 50, 1, 'http://localhost/QLCuaHang/uploads/z4617362741623_98c0302df70bfe02dd581fa8a0e35aa61.jpg', '', 1),
-(6, 'Trà Sữa Bạc Hà', '<p>Tr&agrave; sữa bạc h&agrave;</p>', 25000, 55, 3, 'http://localhost/QLCuaHang/uploads/tu-26-8-21-9-2022-trai-cay-cac-loai-khuyen-mai-chi-tu-18000d-202209071258179650.jpg', '', 1),
-(7, 'Sản phẩm 1', '<p>abcde</p>', 5000, 93, 2, 'http://localhost/QLCuaHang/uploads/z5204981674939_cb87935e11dde5ee3dc2641f5eb6d6042.jpg', '', 1);
+(3, 'Trà Sữa Trân Trâu', '<p>abcde</p>', 15000, 35, 2, 'http://localhost/QLCuaHang/uploads/15819205452.jpg', '', 0),
+(4, 'Hướng Dương', '<p>abcde</p>', 15000, 12, 2, 'http://localhost/QLCuaHang/uploads/z4617362741623_98c0302df70bfe02dd581fa8a0e35aa6.jpg', '', 0),
+(5, 'Sting Vàng', '<p>nước uống</p>', 10000, 50, 1, 'http://localhost/QLCuaHang/uploads/z4617362741623_98c0302df70bfe02dd581fa8a0e35aa61.jpg', '', 0),
+(6, 'Trà Sữa Bạc Hà', '<p>Tr&agrave; sữa bạc h&agrave;</p>', 25000, 55, 3, 'http://localhost/QLCuaHang/uploads/tu-26-8-21-9-2022-trai-cay-cac-loai-khuyen-mai-chi-tu-18000d-202209071258179650.jpg', '', 0),
+(7, 'Sản phẩm 1', '<p>abcde</p>', 5000, 92, 2, 'http://localhost/QLCuaHang/uploads/z5204981674939_cb87935e11dde5ee3dc2641f5eb6d6042.jpg', '', 0),
+(8, 'Oshi Snack Tôm', '<p>Snack t&ocirc;m cay Oishi đủ vị g&oacute;i lớn 68g l&agrave; sản phẩm của Oishi&nbsp;l&agrave; thương hiệu b&aacute;nh kẹo nổi tiếng được nhiều người y&ecirc;u th&iacute;ch tại Việt Nam. Một trong những sản phẩm nổi bật nhất của thương hiệu n&agrave;y l&agrave; c&aacute;c loại b&aacute;nh snack Oishi ph&ocirc; mai, snack cua Crab Me, snack nh&acirc;n đậu phộng Pinattsu, snack que nh&acirc;n kem Akiko,...</p>\r\n<p>Snack t&ocirc;m cay Oishi đủ vị g&oacute;i lớn 68g&nbsp;thuộc top sản phẩm snack ăn vặt tuổi thơ&nbsp;b&aacute;n chạy, sản phẩm được nhiều người đ&oacute;n nhận, đ&aacute;nh gi&aacute; t&iacute;ch cực v&agrave; chưa bao giờ hết &ldquo;HOT&rdquo; tại thị trường Việt Nam.&nbsp;</p>\r\n<p>Snack t&ocirc;m cay Oishi đủ vị g&oacute;i lớn 68g được sản xuất với c&ocirc;ng nghệ rang kh&ocirc;ng dầu (kh&ocirc;ng chi&ecirc;n) gi&uacute;p giảm chất b&eacute;o v&agrave; tốt cho sức khỏe. Snack t&ocirc;m Oishi được phủ xốt cay nồng đặc biệt tạo n&ecirc;n hương vị thơm ngon độc đ&aacute;o. Snack t&ocirc;m cay Oishi ph&ugrave; hợp ăn vặt, vừa ăn vừa xem phim, nghe nhạc, đọc s&aacute;ch kh&aacute; th&uacute; vị.</p>', 15000, 10, 1, 'http://localhost/Store/uploads/May-dong-goi-bim-bim-snack-gia-re.png', '', 1),
+(9, 'Sting Vàng Chai 330ml', '<p>Nước uống tăng lực</p>', 10000, 260, 2, 'http://localhost/Store/uploads/nuoc-sting-vang-320ml.jpg', '', 1);
 
 --
 -- Indexes for dumped tables
@@ -299,7 +319,7 @@ ALTER TABLE `sanpham`
 -- AUTO_INCREMENT for table `chitiethoadon`
 --
 ALTER TABLE `chitiethoadon`
-  MODIFY `MaChiTietHoaDon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=254;
+  MODIFY `MaChiTietHoaDon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=256;
 
 --
 -- AUTO_INCREMENT for table `chuyenmuc`
@@ -311,13 +331,13 @@ ALTER TABLE `chuyenmuc`
 -- AUTO_INCREMENT for table `hoadon`
 --
 ALTER TABLE `hoadon`
-  MODIFY `MaHoaDon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=215;
+  MODIFY `MaHoaDon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=216;
 
 --
 -- AUTO_INCREMENT for table `lichsunhap`
 --
 ALTER TABLE `lichsunhap`
-  MODIFY `MaLichSuNhap` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `MaLichSuNhap` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `nhacungcap`
@@ -335,7 +355,7 @@ ALTER TABLE `nhanvien`
 -- AUTO_INCREMENT for table `sanpham`
 --
 ALTER TABLE `sanpham`
-  MODIFY `MaSanPham` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `MaSanPham` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Constraints for dumped tables

@@ -117,7 +117,7 @@ class Order extends CI_Controller {
 			$mahoadon = 0;
 			$this->syncBank($apikey,$sotaikhoan);
 			foreach ($this->historyBank($apikey) as $item) {
-		        if (strpos($item['description'], $this->session->userdata('noidung')) !== false) {
+		        if (strpos($item['description'], $this->session->userdata('noidung')) !== false){
 		            if($item['amount'] < $this->session->userdata('sumMenu')){
 		            	echo "Số tiền chuyển nhỏ hơn giá trị thanh toán!";
 		            	return;

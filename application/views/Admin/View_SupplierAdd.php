@@ -57,7 +57,7 @@
                             <label>Loại Món Ăn</label>
                             <select class="form-control select2" name="loaimonan[]" multiple>
                                 <?php foreach ($category as $key => $value): ?>
-                                    <option value="<?php echo $value['MaLoaiMonAn'] ?>"><?php echo $value['TenLoaiMonAn'] ?></option>
+                                    <option value="<?php echo $value['MaChuyenMuc'] ?>"><?php echo $value['TenChuyenMuc'] ?></option>
                                 <?php endforeach ?>
                             </select>
                         </div>
